@@ -29,6 +29,12 @@ class AlterTableOrders extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('orders', function (Blueprint $table) {
+            $table->dropColumn('user_name');
+            $table->dropColumn('product_name');
+            $table->dropColumn('product_description');
+            $table->dropColumn('product_price');
+            $table->dropColumn('product_image');
+        });
     }
 }
