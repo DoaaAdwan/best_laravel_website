@@ -16,9 +16,6 @@ class AddOrderStatusToOrdersTable extends Migration
         Schema::table('orders', function (Blueprint $table) {
 
             $table->foreignId('status_id')->after('size_id')->nullable();
-
-
-
         });
     }
 
@@ -29,6 +26,9 @@ class AddOrderStatusToOrdersTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('orders', function (Blueprint $table) {
+
+            $table->dropColumn('status_id');
+        });
     }
 }

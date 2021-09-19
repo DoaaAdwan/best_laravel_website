@@ -26,7 +26,7 @@ class AddNoteToOrdersTable extends Migration
     public function down()
     {
         Schema::table('order', function (Blueprint $table) {
-            //
+            $table->dropColumn('note');
         });
     }
 }

@@ -27,6 +27,10 @@ class AlterOrdersTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('orders', function (Blueprint $table) {
+
+            $table->dropColumn('phone');
+
+        });
     }
 }

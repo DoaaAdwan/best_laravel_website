@@ -26,7 +26,7 @@ class AddNoteToOrdersTable33 extends Migration
     public function down()
     {
         Schema::table('orders_table33', function (Blueprint $table) {
-            //
+            $table->dropColumn('text');
         });
     }
 }

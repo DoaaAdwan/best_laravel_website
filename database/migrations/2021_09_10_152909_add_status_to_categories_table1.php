@@ -26,7 +26,7 @@ class AddStatusToCategoriesTable1 extends Migration
     public function down()
     {
         Schema::table('categries', function (Blueprint $table) {
-            //
+            $table->dropColumn('status');
         });
     }
 }

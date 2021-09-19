@@ -26,7 +26,7 @@ class AddOrderIdToProductsTable extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn('status_id');
+            $table->dropColumn('order_id');
         });
     }
 }
