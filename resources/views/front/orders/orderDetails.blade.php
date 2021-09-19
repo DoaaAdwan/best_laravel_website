@@ -1,0 +1,90 @@
+
+@section('titlepage', 'تأكيد الطلب| برايفت ليبل')
+@extends('front.layouts.master')
+@section('content')
+<!-- Start All Title Box -->
+<div class="all-title-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>طلباتي</h2>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">الرئيسية</a></li>
+                    <li class="breadcrumb-item active">  طلباتي </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End All Title Box -->
+
+<div class="col-lg-6">
+    @if(Session::has('success'))
+    <div class="alert alert-success">
+        {{Session::get('success')}}
+    </div>
+@endif
+</div>
+
+<!-- Start Contact Us  -->
+<div class="contact-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="contact-info-left">
+                    <h2 style="text-align: center">معلومات الطلب</h2>
+                    {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p> --}}
+                    <ul>
+                        <img src="{{asset('uploads/'.$order->product_image)}}" style="width: 300px; height: 400px; float: left;" alt="">
+                        <li>
+                            <p style="text-align: right"><span style="font-weight: bold"> الاسم: </span>{{$order->user_name}}</p>
+                        </li>
+                        <li>
+                            <p style="text-align: right"><span style="font-weight: bold"> الجيميل: </span><a href="mailto:{{$order->user_email}}" target="_blank" rel="noopener noreferrer">{{$order->user_email}}</a></p>
+                        </li>
+                        <li>
+                            <p style="text-align: right"><span style="font-weight: bold">اسم المنتج: </span>{{$order->product_name}}</p>
+                        </li>
+                        <li>
+                            <p style="text-align: right"><span style="font-weight: bold">الوصف: </span>{{$order->product_description}}</p>
+                        </li>
+                        <li>
+                            <p style="text-align: right"><span style="font-weight: bold">الوصف: </span>{{$order->text}}</p>
+                        </li>
+                        <li>
+                            {{-- <p style="text-align: right"><span style="font-weight: bold">الحجم: </span>{{$order->size_name}}</p> --}}
+                        </li>
+
+                        <li>
+                            <p style="text-align: right"><span style="font-weight: bold">الكمية: </span>{{$order->quantity}}</p>
+                        </li>
+                        <li>
+                            <p style="text-align: right"><span style="font-weight: bold">العنوان:</span>{{$order->address}}</p>
+                        </li>
+                        <li>
+                            <p style="text-align: right"><span style="font-weight: bold">حالة الطلب:</span>{{$order->status_order}}</p>
+                        </li>
+                        <li>
+                            <p style="text-align: right"><span style="font-weight: bold">إجمالي سعر الطلب: </span>{{$order->total_order}}	₪</p>
+                        </li>
+                    </ul>
+                    {{-- <div style="float: left; width: 130px;">
+                    <button class="btn btn-success px-5 btn-md" style="background-color: #d33b33; border-color: #d33b33; margin-bottom: auto; margin-left: 40%; display: inline;">تأكيد</button>
+                    </div>
+                    <div style="float: right; width: 225px">
+                    <button class="btn btn-success px-5 btn-md"  style="background-color: #d33b33; border-color: #d33b33; margin-bottom: auto; margin-left: 40%; display: inline;p">رجوع</button>
+                </div> --}}
+                <div >
+                {{-- <button class="btn btn-success px-5 btn-md" style="background-color: #d33b33; border-color: #d33b33; margin-bottom: 50px; margin-left: 45%">تأكيد</button> --}}
+
+                <a class="btn hvr-hover" data-fancybox-close="" style="float:left; background:#d33b33;background-color: #138496; border-color: #138496; margin-bottom: 50px; color: white; margin-left: 300px" href="{{route('store.edit', $product->slug)}}"> تعديل</a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@stop
