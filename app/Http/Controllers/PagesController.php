@@ -25,10 +25,10 @@ class PagesController extends Controller
     {
         $posts= Post::latest('id')->paginate(3);
         $products= Product::latest('id')->paginate(4);
-        $categories= Category::latest('id')->paginate(5);
+        $categories= Category::latest('id')->paginate(6);
         $sliders= HomeSlider::all();
-        $featured_products= Product::where(['featured_id'=>1])->latest()->limit(5)->get();
-        $popular_products= Product::where(['popular_id'=>1])->latest()->limit(5)->get();
+        $featured_products= Product::where(['featured_id'=>1])->latest()->limit(3)->get();
+        $popular_products= Product::where(['popular_id'=>1])->latest()->limit(3)->get();
         $status_products =Product::with('status')->orderBy('created_at', 'desc')->get();
 
         $categories= Category::with('categories')->where(['parent_id'=>0])->get();

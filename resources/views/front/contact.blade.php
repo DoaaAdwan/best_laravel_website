@@ -11,7 +11,7 @@
             <div class="col-lg-12">
                 <h2>تواصل معنا</h2>
                 <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">الرئيسية</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('index')}}">الرئيسية</a></li>
                     <li class="breadcrumb-item active"> تواصل معنا </li>
                 </ul>
             </div>

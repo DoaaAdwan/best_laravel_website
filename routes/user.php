@@ -8,17 +8,17 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\Admin\ProductController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/featured_product', [App\Http\Controllers\HomeController::class, 'featuredProduct'])->name('featuredProduct');
 
-Route::get('/store',[PagesController::class,'index'])->name('index');
+Route::get('/',[PagesController::class,'index'])->name('index');
 
 //user or customer routes
 Route::prefix('/store')->name('store.')->group(function(){
